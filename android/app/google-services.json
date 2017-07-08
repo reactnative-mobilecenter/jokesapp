@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "468010923338",
+    "firebase_url": "https://reactnativejokesapp.firebaseio.com",
+    "project_id": "reactnativejokesapp",
+    "storage_bucket": "reactnativejokesapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468010923338:android:202ebaee90caf4c8",
+        "android_client_info": {
+          "package_name": "com.jokesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468010923338-c978u07fknkrpnl3n8url9jmmqehcilf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLHCq-w69mQX5W2U9L2HwBkEqNcLsjS3E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
