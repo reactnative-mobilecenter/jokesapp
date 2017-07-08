@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -12,42 +6,22 @@ import {
   View
 } from 'react-native';
 
-export default class jokesapp extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+import App from './app/index';
+import CodePush from 'react-native-code-push';
+const jokesapp = CodePush({
+  installMode: CodePush.InstallMode.IMMEDIATE,
+  updateDialog: true
+})(App);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+import Push from 'mobile-center-push';
+import { Alert } from 'react-native';
+Push.setEventListener({
+  pushNotificationReceived: function ({ message = '', title = '<empty>', customProperties = {} }) {
+    message += '\nCustom properties:\n' + JSON.stringify(customProperties);
+    if (AppState.currentState === 'active') {
+      Alert.alert(title, message);
+    }
+  }
 });
 
 AppRegistry.registerComponent('jokesapp', () => jokesapp);
