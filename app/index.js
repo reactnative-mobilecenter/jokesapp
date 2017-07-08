@@ -14,7 +14,7 @@ export default class jokesapp extends Component {
       .then(r => r.text())
       .then(joke => this.setState({ joke }));
     this.setState({ joke: '...' });
-    track();
+    this.track();
   }
 
   track() {
